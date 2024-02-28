@@ -2,7 +2,7 @@
 
 const gridContainer = document.querySelector('#gridContainer');
 
-let gridLength = 34;
+let gridLength = 100;
 
 
 
