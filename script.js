@@ -68,4 +68,4 @@ resetButton.addEventListener('click', () => {
 
 
 // initialize grid on load
-createGrid(10);
+createGrid(DEFAULT_SIZE);
