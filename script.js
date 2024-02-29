@@ -45,11 +45,7 @@ function createGrid(size) {
 
             element.style.backgroundColor = color;
 
-
-
             adjustBrightness(element);
-
-
 
         });
 
@@ -145,10 +141,10 @@ resizeButton.addEventListener('click', () => {
     if (newSize != null) {
         newSize = parseInt(newSize);
 
-        if (!isNaN(newSize) && newSize > 0) {
+        if (!isNaN(newSize) && newSize > 0 && size < 101) {
             createGrid(newSize);
         } else {
-            alert("Enter a real, positive number");
+            alert("Enter a positive number less than 100!");
         }
     }
 
