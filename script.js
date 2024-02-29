@@ -3,6 +3,7 @@ const gridContainer = document.querySelector('#gridContainer');
 const resizeButton = document.querySelector('#resize');
 const resetButton = document.querySelector('#reset');
 const gradientButton = document.querySelector("#gradient");
+const buttonContainer = document.querySelector('#buttonContainer');
 
 // constants
 const DEFAULT_SIZE = 10;
@@ -15,6 +16,7 @@ let CONTAINER_SIZE = 600;
 let dynamicGrid = (CONTAINER_SIZE / gridSize);
 
 let gradientMode = false;
+let gradientIsDark = true;
 
 
 function createGrid(size) {
@@ -60,8 +62,14 @@ function createGrid(size) {
 
 function adjustBrightness(element) {
     let currentBrightness = getCurrentBrightness(element);
+    let newBrightness;
 
-    let newBrightness = currentBrightness * 0.9; // reduce brightness by 10%
+    if (gradientIsDark) {
+        newBrightness = currentBrightness - 0.1; // reduce brightness by 10%
+    } else {
+        newBrightness = currentBrightness + 0.1; // increase brightness by 10%;
+    }
+
 
     element.style.filter = `brightness(${newBrightness})`;
 
@@ -81,10 +89,20 @@ function toggleGradientMode() {
     if (gradientMode === true) {
         console.log("Gradient mode is on!");
         gradientButton.textContent = "Gradient Mode: On";
+        createInverseButton();
     } else {
         console.log("Gradient mode is off!");
         gradientButton.textContent = "Gradient Mode: Off";
     }
+}
+
+
+function createInverseButton() {
+    const inverseButton = document.createElement('button');
+    inverseButton.id = "inverseButton";
+    inverseButton.textContent = "Invert Gradient: Dark";
+    buttonContainer.appendChild(inverseButton);
+
 }
 
 function getRandomColor() {
