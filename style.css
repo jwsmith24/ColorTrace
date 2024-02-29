@@ -25,18 +25,36 @@
     gap: 10px;
     justify-content: space-evenly;
     align-items: center;
+    flex-basis: 1;
 
 }
 
-#darkMode {
+.darkMode {
 
     filter: brightness(50%);
 }
 
-#lightMode {
+.lightMode {
 
     filter: brightness(150%);
 }
+
+#inverse {
+
+    display: none;
+
+
+}
+
+
+
+#specialButtons button {
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+
+}
+
 
 
 button:hover {

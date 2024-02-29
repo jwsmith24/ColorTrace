@@ -3,6 +3,7 @@ const gridContainer = document.querySelector('#gridContainer');
 const resizeButton = document.querySelector('#resize');
 const resetButton = document.querySelector('#reset');
 const gradientButton = document.querySelector("#gradient");
+const inverseButton = document.querySelector("#inverse");
 const buttonContainer = document.querySelector('#buttonContainer');
 
 // constants
@@ -89,19 +90,31 @@ function toggleGradientMode() {
     if (gradientMode === true) {
         console.log("Gradient mode is on!");
         gradientButton.textContent = "Gradient Mode: On";
-        createInverseButton();
+        inverseButton.style.display = 'inline-block';
+
     } else {
         console.log("Gradient mode is off!");
         gradientButton.textContent = "Gradient Mode: Off";
+        inverseButton.style.display = 'none';
     }
 }
 
 
-function createInverseButton() {
-    const inverseButton = document.createElement('button');
-    inverseButton.id = "inverseButton";
-    inverseButton.textContent = "Invert Gradient: Dark";
-    buttonContainer.appendChild(inverseButton);
+function showInverseButton() {
+
+}
+
+function toggleInverseMode(inverseButton) {
+    gradientIsDark = !gradientIsDark;
+
+    if (gradientIsDark) {
+        inverseButton.textContent = "Invert Gradient : Dark";
+        console.log("Gradient set to dark mode");
+    } else {
+        inverseButton.textContent = "Invert Gradient : Light";
+        console.log("Gradient set to light mode");
+    }
+
 
 }
 
