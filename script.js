@@ -45,12 +45,11 @@ function createGrid(size) {
 
             element.style.backgroundColor = color;
 
-            // reduce brightness by 10% on each hover
-            if (gradientMode === true) {
 
-                adjustBrightness(element);
 
-            }
+            adjustBrightness(element);
+
+
 
         });
 
@@ -65,11 +64,18 @@ function adjustBrightness(element) {
     let currentBrightness = getCurrentBrightness(element);
     let newBrightness;
 
-    if (gradientIsDark) {
-        newBrightness = currentBrightness - 0.1; // reduce brightness by 10%
+    if (gradientMode) {
+
+        if (gradientIsDark) {
+            newBrightness = currentBrightness - 0.1; // reduce brightness by 10%
+        } else {
+            newBrightness = currentBrightness + 0.1; // increase brightness by 10%;
+        }
     } else {
-        newBrightness = currentBrightness + 0.1; // increase brightness by 10%;
+        newBrightness = 1;
+
     }
+
 
 
     element.style.filter = `brightness(${newBrightness})`;
