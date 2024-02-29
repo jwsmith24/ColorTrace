@@ -3,6 +3,7 @@ const gridContainer = document.querySelector('#gridContainer');
 const resizeButton = document.querySelector('#resize');
 const resetButton = document.querySelector('#reset');
 
+// constants
 const DEFAULT_SIZE = 10;
 
 
@@ -11,6 +12,8 @@ let gridSize = DEFAULT_SIZE;
 let numberOfGrids = gridSize * gridSize;
 let CONTAINER_SIZE = 600;
 let dynamicGrid = (CONTAINER_SIZE / gridSize);
+
+let gradientMode = false;
 
 
 function createGrid(size) {
@@ -44,6 +47,16 @@ function createGrid(size) {
 
     }
 
+}
+
+function toggleGradientMode() {
+    gradientMode = !gradientMode;
+
+    if (gradientMode === true) {
+        console.log("Gradient mode is on!");
+    } else {
+        console.log("Gradient mode is off!");
+    }
 }
 
 function getRandomColor() {
