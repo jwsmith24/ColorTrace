@@ -100,7 +100,7 @@ function toggleGradientMode() {
 }
 
 
-inverseButton.addEventListener('click', toggleInverseMode());
+
 
 function toggleInverseMode() {
     gradientIsDark = !gradientIsDark;
@@ -128,7 +128,9 @@ function getRandomColor() {
 
 }
 
-
+inverseButton.addEventListener('click', () => {
+    toggleInverseMode()
+});
 
 resizeButton.addEventListener('click', () => {
 
