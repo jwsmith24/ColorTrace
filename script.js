@@ -60,11 +60,11 @@ function createGrid(size) {
 
 function adjustBrightness(element) {
     let currentBrightness = getCurrentBrightness(element);
-    console.log("current brightness: " + currentBrightness);
+
     let newBrightness = currentBrightness * 0.9; // reduce brightness by 10%
-    console.log("Calculated new brightness: " + newBrightness);
+
     element.style.filter = `brightness(${newBrightness})`;
-    console.log("new element brightness: " + getCurrentBrightness(element));
+
 }
 
 
