@@ -15,9 +15,14 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    gap: 15px;
 }
 
-
+#buttonContainer {
+    display: flex;
+    max-width: 600px;
+    justify-content: space-evenly;
+}
 
 
 #gameTitle {

@@ -3,11 +3,11 @@
 const gridContainer = document.querySelector('#gridContainer');
 
 
-const gridSize = 75;
+const gridSize = 10;
 let numberOfGrids = gridSize * gridSize;
 
 // container is 600x600px
-let CONTAINER_SIZE = 550;
+let CONTAINER_SIZE = 600;
 
 // dynamically calculate size
 let dynamicGrid = (CONTAINER_SIZE / gridSize);
