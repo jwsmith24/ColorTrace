@@ -33,7 +33,9 @@ function createGrid(size) {
 
         gridSquare.addEventListener('mouseover', (e) => {
 
-            e.target.classList.add('hoverEffect');
+            let color = getRandomColor();
+
+            e.target.style.backgroundColor = color;
 
         });
 
@@ -41,6 +43,18 @@ function createGrid(size) {
         gridContainer.appendChild(gridSquare);
 
     }
+
+}
+
+function getRandomColor() {
+
+    let R = Math.floor(Math.random() * 255);
+    let G = Math.floor(Math.random() * 255);
+    let B = Math.floor(Math.random() * 255);
+
+    let color = "rgb(" + R + "," + B + "," + G + ")";
+
+    return color;
 
 }
 
