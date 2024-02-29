@@ -28,9 +28,18 @@
 
 }
 
+
+button:hover {
+    filter: brightness(85%);
+}
+
 .grids {
     background-color: rgb(154, 145, 170);
+
+    filter: brightness(1);
+    /* applies brightness filter to be modified */
 }
+
 
 
 #gameTitle {

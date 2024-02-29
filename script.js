@@ -37,11 +37,16 @@ function createGrid(size) {
 
         gridSquare.addEventListener('mouseover', (e) => {
 
+            let element = e.target;
             let color = getRandomColor();
-            e.target.style.backgroundColor = color;
 
+            element.style.backgroundColor = color;
+
+            // reduce brightness by 10% on each hover
             if (gradientMode === true) {
-                applyGradient(e.target);
+
+                adjustBrightness(element);
+
             }
 
         });
@@ -51,6 +56,23 @@ function createGrid(size) {
 
     }
 
+}
+
+function adjustBrightness(element) {
+    let currentBrightness = getCurrentBrightness(element);
+    console.log("current brightness: " + currentBrightness);
+    let newBrightness = currentBrightness * 0.9; // reduce brightness by 10%
+    console.log("Calculated new brightness: " + newBrightness);
+    element.style.filter = `brightness(${newBrightness})`;
+    console.log("new element brightness: " + getCurrentBrightness(element));
+}
+
+
+function getCurrentBrightness(element) {
+    let brightnessValue = window.getComputedStyle(element).getPropertyValue('filter');
+    let brightnessMatch = brightnessValue.match(/brightness\((\d+(\.\d+)?)\)/);
+
+    return brightnessMatch ? parseFloat(brightnessMatch[1]) : 100;
 }
 
 function toggleGradientMode() {
@@ -77,23 +99,6 @@ function getRandomColor() {
 
 }
 
-function applyGradient(gridSquare) {
-
-    let currentRgb = gridSquare.style.backgroundColor;
-
-    let rgbValues = currentRgb.match(/\d+/g); // extract rgb values from the string
-
-    // current rgb values, want to darken and return back a whole string to update style property
-    let r = rgbValues[0];
-    let b = rgbValues[1];
-    let g = rgbValues[2];
-
-    console.log("R: " + r);
-    console.log("B: " + b);
-    console.log("G: " + g);
-
-
-}
 
 
 resizeButton.addEventListener('click', () => {
