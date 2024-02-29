@@ -63,6 +63,8 @@ function applyGradient(gridSquare) {
     let currentRgb = gridSquare.style.backgroundColor;
 
     let rgbValues = currentRgb.match(/\d+/g); // extract rgb values from the string
+
+    // current rgb values, want to darken and return back a whole string to update style property
     let r = rgbValues[0];
     let b = rgbValues[1];
     let g = rgbValues[2];
