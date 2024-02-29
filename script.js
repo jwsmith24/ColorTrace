@@ -2,6 +2,7 @@
 const gridContainer = document.querySelector('#gridContainer');
 const resizeButton = document.querySelector('#resize');
 const resetButton = document.querySelector('#reset');
+const gradientButton = document.querySelector("#gradient");
 
 // constants
 const DEFAULT_SIZE = 10;
@@ -37,8 +38,11 @@ function createGrid(size) {
         gridSquare.addEventListener('mouseover', (e) => {
 
             let color = getRandomColor();
-
             e.target.style.backgroundColor = color;
+
+            if (gradientMode === true) {
+                applyGradient(e.target);
+            }
 
         });
 
@@ -54,8 +58,10 @@ function toggleGradientMode() {
 
     if (gradientMode === true) {
         console.log("Gradient mode is on!");
+        gradientButton.textContent = "Gradient Mode: On";
     } else {
         console.log("Gradient mode is off!");
+        gradientButton.textContent = "Gradient Mode: Off";
     }
 }
 
@@ -105,6 +111,11 @@ resizeButton.addEventListener('click', () => {
     }
 
 });
+
+
+gradientButton.addEventListener('click', () => {
+    toggleGradientMode();
+})
 
 // reset to default size
 resetButton.addEventListener('click', () => {
