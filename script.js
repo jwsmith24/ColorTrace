@@ -100,11 +100,9 @@ function toggleGradientMode() {
 }
 
 
-function showInverseButton() {
+inverseButton.addEventListener('click', toggleInverseMode());
 
-}
-
-function toggleInverseMode(inverseButton) {
+function toggleInverseMode() {
     gradientIsDark = !gradientIsDark;
 
     if (gradientIsDark) {
