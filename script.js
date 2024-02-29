@@ -58,6 +58,22 @@ function getRandomColor() {
 
 }
 
+function applyGradient(gridSquare) {
+
+    let currentRgb = gridSquare.style.backgroundColor;
+
+    let rgbValues = currentRgb.match(/\d+/g); // extract rgb values from the string
+    let r = rgbValues[0];
+    let b = rgbValues[1];
+    let g = rgbValues[2];
+
+    console.log("R: " + r);
+    console.log("B: " + b);
+    console.log("G: " + g);
+
+
+}
+
 
 resizeButton.addEventListener('click', () => {
 
