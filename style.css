@@ -1,45 +1,30 @@
-.grids {
-    border: 2px solid black;
-
-    flex-grow: 0;
-
-    height: 100px;
-    width: 100px;
-
-}
-
-
 #gridContainer {
+
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
     flex-wrap: wrap;
 
-    width: 1100px;
-    height: 1100px;
-
-
-    gap: 5px;
+    max-width: 600px;
+    max-height: 600px;
+    flex-grow: 0;
 
 }
-
 
 #topLevel {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100vw;
-    justify-content: center;
-    align-items: center;
 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
+
+
 
 
 #gameTitle {
-    margin-bottom: 100px;
+
     font-size: 64px;
-    text-align: center;
+
+    margin: auto;
 }
 
 .hoverEffect {
