@@ -141,7 +141,7 @@ resizeButton.addEventListener('click', () => {
     if (newSize != null) {
         newSize = parseInt(newSize);
 
-        if (!isNaN(newSize) && newSize > 0 && size < 101) {
+        if (!isNaN(newSize) && newSize > 0 && newSize < 101) {
             createGrid(newSize);
         } else {
             alert("Enter a positive number less than 100!");
