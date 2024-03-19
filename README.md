@@ -25,3 +25,6 @@ Reset Grid will restore all grids to the default color and resize to 10x10.
 <img src="colorTraceImages/gradient-mode.png" alt="Example trace" width="40%">
 
 Squares in the bottom right have the dark gradient applied, squares in the top left have the light gradient applied, and squares in the middle have the normal brightness applied.
+
+
+Add extra branch to mess with GitHub API calls
